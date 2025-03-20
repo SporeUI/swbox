@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<script src="swbox.min.js?swversion=disable"></script>
+<!-- <% for (var chunk in htmlWebpackPlugin.files.js) { %>
+<script type="text/javascript" src="<%=htmlWebpackPlugin.files.js[chunk] %>" crossorigin="anonymous"></script>
+<% } %> -->
+<script>
+  const sw = window['swbox'].default;
+  const isSupport = sw.support();
+  sw.setConfig({
+    registerUrl: 'https://localhost/sw.js',
+  })
+  sw.add({
+    url: '//file.min.js',
+    version() {
+      return Promise.resolve('1.0.0');
+    }
+  })
+  sw.add({
+    url: 'https://file2.min.js',
+    version: '0.0.0',
+  })
+  sw.add({
+    url: 'https://file3.min.js?swversion=disable',
+  })
+  sw.start();
+  // sw.clearCache();
+  // sw.clear();
+
+</script>
+
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+  <div class="list">
+    <h3>基础示例</h3>
+    <div class="item demo1">
+      <button type="button" class="btn btn-primary btn-lg btn-block btn-sw">点击测试</button>
+    </div>
+  </div>
+</body>
+
+</html>

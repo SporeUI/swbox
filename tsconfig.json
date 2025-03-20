@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "noImplicitThis": false,
+    "allowJs": true,
+    "declaration": true,
+    "outDir": "types"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "test",
+    "node_modules",
+  ]
+}
